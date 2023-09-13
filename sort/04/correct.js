@@ -43,13 +43,15 @@ const length = Number(inputData[0]);
 let array = inputData[1].split(' ').map(Number);
 let sortArray = [...new Set(array)]; //중복제거 array 복사
 
-
+//1 4    1-4 - 4 1
 const compare = (a,b)=>{
    if(a < b) return -1;
    else if(a>b) return 1;
    return 0;
 }
-
+// const compare = (a,b)=>{ 유사
+//    return a-b;
+// }
 // sortarray  -10 -9 2 4
 // array      2 4 -10 4 -9
 
@@ -60,7 +62,7 @@ const compare = (a,b)=>{
  * -9 : 1
  */
 sortArray.sort(compare); // -10 -9 2 4
-
+console.log(sortArray);
 let mySet = new Map();
 sortArray.forEach((item, idx)=>{
    mySet.set(item, idx);
